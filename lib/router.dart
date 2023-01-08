@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/pages/home/home_page.dart';
-import 'package:flutter_rest_app_template/pages/splash/splash_page.dart';
-import 'package:flutter_rest_app_template/services/routing/routing_service.dart';
 import 'package:flutter_rest_app_template/utils/logger/observers.dart';
+import 'package:flutter_rest_app_template/views/home/home_page.dart';
+import 'package:flutter_rest_app_template/views/splash/splash_page.dart';
 import 'package:go_router/go_router.dart';
 
-class GoRouterRoutingService extends RoutingService {
+abstract class AppRouter {
+  RouterConfig<Object> buildConfig();
+}
+
+class GoRouterBasedAppRouter implements AppRouter {
   final GlobalKey<NavigatorState> navigatorKey;
 
-  GoRouterRoutingService({
-    required this.navigatorKey,
-  });
+  GoRouterBasedAppRouter({required this.navigatorKey});
 
   @override
   RouterConfig<Object> buildConfig() {
