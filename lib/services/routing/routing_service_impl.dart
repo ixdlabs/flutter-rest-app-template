@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/logger/observers.dart';
+import 'package:flutter_rest_app_template/utils/logger/observers.dart';
 import 'package:flutter_rest_app_template/services/routing/routing_service.dart';
 import 'package:go_router/go_router.dart';
 

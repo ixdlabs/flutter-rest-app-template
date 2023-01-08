@@ -1,4 +1,4 @@
-abstract class AnalyticsService {
+abstract class AnalyticsDelegate {
   Future<void> recordError(Object error, StackTrace stackTrace,
       {required String reason});
 

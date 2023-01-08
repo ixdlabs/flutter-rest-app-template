@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_rest_app_template/logger/logger.dart';
+import 'package:flutter_rest_app_template/utils/logger/logger.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// An observer for [ProviderScope] that logs events happening for providers.

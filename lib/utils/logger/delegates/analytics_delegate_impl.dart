@@ -1,6 +1,6 @@
-import 'package:flutter_rest_app_template/services/analytics/analytics_service.dart';
+import 'package:flutter_rest_app_template/utils/logger/delegates/analytics_delegate.dart';
 
-class MockAnalyticsService extends AnalyticsService {
+class MockAnalyticsDelegate extends AnalyticsDelegate {
   @override
   Future<void> recordAnalytic(
       String name, Map<String, Object?>? parameters) async {}

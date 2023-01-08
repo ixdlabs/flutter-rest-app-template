@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/logger/observers.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_rest_app_template/utils/logger/observers.dart';
 import 'package:flutter_rest_app_template/providers/routing_provider.dart';
 import 'package:flutter_rest_app_template/providers/theme_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -28,7 +29,7 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: routerConfig,
       theme: theme,
-      // builder: EasyLoading.init(),
+      builder: EasyLoading.init(),
     );
   }
 }
