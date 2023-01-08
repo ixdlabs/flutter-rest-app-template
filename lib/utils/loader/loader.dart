@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/utils/loader/delegates/loader_delegate.dart';
-import 'package:flutter_rest_app_template/utils/loader/delegates/loader_delegate_impl.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class Loader {
-  static final Loader _instance = Loader._();
-
-  final LoaderDelegate loaderDelegate;
-
-  Loader._() : loaderDelegate = EasyLoadingLoaderDelegate();
+  Loader._();
 
   static TransitionBuilder buildOverlay() {
-    return _instance.loaderDelegate.buildOverlay();
+    return EasyLoading.init();
   }
 
-  static void dismissLoader() {
-    return _instance.loaderDelegate.dismissLoader();
-  }
-
-  static void showError(Object error) {
-    return _instance.loaderDelegate.showError(error);
-  }
-
-  static void showLoader() {
-    return _instance.loaderDelegate.showLoader();
+  static void showErrorMessage(String message) {
+    EasyLoading.showError(
+      message,
+      dismissOnTap: true,
+      duration: const Duration(seconds: 5),
+      maskType: EasyLoadingMaskType.black,
+    );
   }
 
   static void showSuccess(String message) {
-    return _instance.loaderDelegate.showSuccess(message);
+    EasyLoading.showSuccess(message,
+        dismissOnTap: true, maskType: EasyLoadingMaskType.black);
+  }
+
+  static void dismissLoader() {
+    EasyLoading.dismiss();
+  }
+
+  static void showLoader() {
+    EasyLoading.show(status: 'Loading...', maskType: EasyLoadingMaskType.black);
   }
 }
