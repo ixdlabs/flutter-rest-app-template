@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rest_app_template/utils/logger/observers.dart';
+import 'package:flutter_rest_app_template/views/books/books_page.dart';
 import 'package:flutter_rest_app_template/views/home/home_page.dart';
 import 'package:flutter_rest_app_template/views/splash/splash_page.dart';
 import 'package:go_router/go_router.dart';
@@ -28,6 +29,10 @@ class GoRouterBasedAppRouter implements AppRouter {
         GoRoute(
           path: '/home',
           builder: (context, state) => const HomePage(),
+        ),
+        GoRoute(
+          path: '/books',
+          builder: (context, state) => const BooksPage(),
         ),
       ],
     );

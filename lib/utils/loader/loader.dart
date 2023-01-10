@@ -1,14 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_rest_app_template/utils/loader/messenger.dart';
 
-class Loader {
-  Loader._();
+class Loader extends Messenger {
+  Loader(super.context);
 
-  static TransitionBuilder buildOverlay() {
-    return EasyLoading.init();
-  }
-
-  static void showErrorMessage(String message) {
+  @override
+  void showErrorMessage(String message) {
     EasyLoading.showError(
       message,
       dismissOnTap: true,
@@ -17,16 +14,19 @@ class Loader {
     );
   }
 
-  static void showSuccess(String message) {
+  @override
+  void showSuccess(String message) {
     EasyLoading.showSuccess(message,
         dismissOnTap: true, maskType: EasyLoadingMaskType.black);
   }
 
-  static void dismissLoader() {
+  @override
+  void dismissLoader() {
     EasyLoading.dismiss();
   }
 
-  static void showLoader() {
+  @override
+  void showLoader() {
     EasyLoading.show(status: 'Loading...', maskType: EasyLoadingMaskType.black);
   }
 }
