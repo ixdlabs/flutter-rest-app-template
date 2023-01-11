@@ -25,7 +25,7 @@ class BookListView extends ConsumerWidget {
         ),
         error: (error, stack) => Center(
           child: ErrorMessageWidget(
-            message: "Error!",
+            message: "Oops found an issue!",
             exception: error,
             onRetry: () => ref.refresh(booksProvider),
           ),

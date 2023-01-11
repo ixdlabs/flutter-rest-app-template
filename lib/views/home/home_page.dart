@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset('assets/images/book_reading.png'),
-          const SizedBox(height: 65,),
+          const SizedBox(height: 65),
           const DescriptionView(),
         ],
       ),

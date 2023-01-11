@@ -10,12 +10,10 @@ class BookTileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(booksModel.title),
-      subtitle: Text(booksModel.author),
+      subtitle: Text(booksModel.author.join(", ")),
       leading: Image.network(
         booksModel.coverImage,
-        fit: BoxFit.fill,
-        height: 60,
-        width: 60,
+        fit: BoxFit.contain,
       ),
     );
   }

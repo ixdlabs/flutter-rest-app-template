@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rest_app_template/providers/routing_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class DescriptionView extends ConsumerWidget {
@@ -19,11 +20,15 @@ class DescriptionView extends ConsumerWidget {
         ),
         const SizedBox(height: 12),
         ElevatedButton(
-            onPressed: () => handleSearch(context, ref),
-            child: const Text("Search"))
+          onPressed: () => handleSearch(context, ref),
+          child: const Text("Search"),
+        ),
       ],
     );
   }
 
-  Future<void> handleSearch(BuildContext context, WidgetRef ref) async {}
+  void handleSearch(BuildContext context, WidgetRef ref) {
+    final appRouter = ref.read(routerProvider);
+    appRouter.push(context, "/books");
+  }
 }

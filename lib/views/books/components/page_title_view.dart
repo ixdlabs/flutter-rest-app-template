@@ -8,11 +8,11 @@ class PageTitleView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.symmetric(
-        vertical: 8.0,
+        vertical: 25.0,
         horizontal: 12.0,
       ),
       child: Text(
-        "Search a Book",
+        "SearchBook",
         style: TextStyle(
           fontSize: 35,
           fontWeight: FontWeight.bold,

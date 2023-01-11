@@ -12,7 +12,7 @@ class SplashPage extends StatelessWidget {
         padding: const EdgeInsets.only(right: 2),
         child: const Center(
           child: Text(
-            "Borrow a Book",
+            "SearchBook",
             style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w500,

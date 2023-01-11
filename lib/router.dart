@@ -7,6 +7,8 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   RouterConfig<Object> buildConfig();
+
+  void push(BuildContext context, String path);
 }
 
 class GoRouterBasedAppRouter implements AppRouter {
@@ -18,7 +20,7 @@ class GoRouterBasedAppRouter implements AppRouter {
   RouterConfig<Object> buildConfig() {
     return GoRouter(
       navigatorKey: navigatorKey,
-      initialLocation: '/books',
+      initialLocation: '/home',
       observers: [AppNavigationObserver()],
       redirect: redirect,
       routes: [
@@ -44,5 +46,10 @@ class GoRouterBasedAppRouter implements AppRouter {
   /// Returning a string will result in redirecting to the specified page.
   String? redirect(BuildContext context, GoRouterState state) {
     return null;
+  }
+
+  @override
+  void push(BuildContext context, String path) {
+    context.go(path);
   }
 }
