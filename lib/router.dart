@@ -18,7 +18,7 @@ class GoRouterBasedAppRouter implements AppRouter {
   RouterConfig<Object> buildConfig() {
     return GoRouter(
       navigatorKey: navigatorKey,
-      initialLocation: '/splash',
+      initialLocation: '/books',
       observers: [AppNavigationObserver()],
       redirect: redirect,
       routes: [

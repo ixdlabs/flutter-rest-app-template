@@ -11,23 +11,27 @@ class BookListView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final bookListFuture = ref.watch(booksProvider);
 
-    return bookListFuture.when(
-      data: (bookList) => ListView.builder(
-        padding: const EdgeInsets.all(10.0),
-        itemCount: bookList.length,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: BookTileView(
-            booksModel: bookList[index],
+    return Expanded(
+      child: bookListFuture.when(
+        data: (bookList) => ListView.builder(
+          padding: const EdgeInsets.all(10.0),
+          itemCount: bookList.length,
+          itemBuilder: (context, index) => Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: BookTileView(
+              booksModel: bookList[index],
+            ),
           ),
         ),
+        error: (error, stack) => Center(
+          child: ErrorMessageWidget(
+            message: "Error!",
+            exception: error,
+            onRetry: () => ref.refresh(booksProvider),
+          ),
+        ),
+        loading: () => const Center(child: CircularProgressIndicator()),
       ),
-      error: (error, stack) => ErrorMessageWidget(
-        message: "Error!",
-        exception: error,
-        onRetry: () => ref.refresh(booksProvider),
-      ),
-      loading: () => const CircularProgressIndicator(),
     );
   }
 }

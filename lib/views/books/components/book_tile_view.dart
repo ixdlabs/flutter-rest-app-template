@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/models/books//books.dart';
+import 'package:flutter_rest_app_template/models/books/books.dart';
 
 class BookTileView extends StatelessWidget {
   final BooksModel booksModel;
