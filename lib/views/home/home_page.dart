@@ -1,8 +1,9 @@
+import 'package:example_app/constants.dart';
+import 'package:example_app/views/home/components/description_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/views/home/components/description_view.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/images/book_reading.png'),
+          Image.asset(AssetConstants.kBookReading),
           const SizedBox(height: 65),
           const DescriptionView(),
         ],

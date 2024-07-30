@@ -1,16 +1,27 @@
-# flutter_rest_app_template
+# example_app
 
 A new Flutter project.
 
-## Getting Started
+## FLutter setup (FVM)
 
-This project is a starting point for a Flutter application.
+Install FVM according to the instructions [here](https://fvm.app/documentation/getting-started/installation)
+Then, run the following command to install the Flutter version specified in the `.fvm` file:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+fvm install
+fvm flutter doctor
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Whenever you want to use flutter or dart commands, you should use the `fvm` command. For example:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+fvm flutter run
+```
+
+If you use VS Code, the configuration file `.vscode/settings.json` is already set up to use the Flutter version specified in the `.fvm` file.
+
+## Building models
+
+```bash
+fvm dart run build_runner build --delete-conflicting-outputs
+```

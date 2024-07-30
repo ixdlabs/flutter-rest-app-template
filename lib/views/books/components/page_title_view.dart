@@ -1,8 +1,8 @@
+import 'package:example_app/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/constants.dart';
 
 class PageTitleView extends StatelessWidget {
-  const PageTitleView({Key? key}) : super(key: key);
+  const PageTitleView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +12,11 @@ class PageTitleView extends StatelessWidget {
         horizontal: 12.0,
       ),
       child: Text(
-        "SearchBook",
+        'SearchBook',
         style: TextStyle(
           fontSize: 35,
           fontWeight: FontWeight.bold,
-          color: ColorConstants.kBlue,
+          color: ColorConstants.kPrimary,
         ),
       ),
     );

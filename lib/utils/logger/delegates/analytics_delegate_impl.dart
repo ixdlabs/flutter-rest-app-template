@@ -1,6 +1,8 @@
-import 'package:flutter_rest_app_template/utils/logger/delegates/analytics_delegate.dart';
+import 'package:example_app/utils/logger/delegates/analytics_delegate.dart';
 
-class MockAnalyticsDelegate extends AnalyticsDelegate {
+/// A sample implementation of the [AnalyticsDelegate] interface.
+/// This implementation does not send any analytics events.
+class NoOpAnalyticsDelegate extends AnalyticsDelegate {
   @override
   Future<void> recordAnalytic(
       String name, Map<String, Object?>? parameters) async {}

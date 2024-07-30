@@ -1,11 +1,11 @@
+import 'package:example_app/providers/books_provider.dart';
+import 'package:example_app/utils/error_widget.dart';
+import 'package:example_app/views/books/components/book_tile_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/providers/books_provider.dart';
-import 'package:flutter_rest_app_template/utils/error_widget.dart';
-import 'package:flutter_rest_app_template/views/books/components/book_tile_view.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class BookListView extends ConsumerWidget {
-  const BookListView({Key? key}) : super(key: key);
+  const BookListView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,7 +25,7 @@ class BookListView extends ConsumerWidget {
         ),
         error: (error, stack) => Center(
           child: ErrorMessageWidget(
-            message: "Oops found an issue!",
+            message: 'Oops found an issue!',
             exception: error,
             onRetry: () => ref.refresh(booksProvider),
           ),

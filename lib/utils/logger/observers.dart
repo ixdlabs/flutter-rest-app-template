@@ -1,12 +1,12 @@
+import 'package:example_app/utils/logger/logger.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_rest_app_template/utils/logger/logger.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// An observer for [ProviderScope] that logs events happening for providers.
 class AppProviderObserver extends ProviderObserver {
   String getName(ProviderBase provider) {
     if (provider.name != null) return provider.name!;
-    Log.w("Provider name not provided. Provider: $provider");
+    Log.w('Provider name not provided. Provider: $provider');
     return provider.runtimeType.toString();
   }
 
@@ -20,14 +20,14 @@ class AppProviderObserver extends ProviderObserver {
   void didUpdateProvider(ProviderBase provider, Object? previousValue,
       Object? newValue, ProviderContainer container) {
     final name = getName(provider);
-    if (name.endsWith(":hidden")) return;
-    Log.d("[$name] updated to $newValue");
+    if (name.endsWith(':hidden')) return;
+    Log.d('[$name] updated to $newValue');
   }
 
   @override
   void providerDidFail(ProviderBase provider, Object error,
       StackTrace stackTrace, ProviderContainer container) {
-    Log.e("[${getName(provider)}] $error");
+    Log.e('[${getName(provider)}] $error');
   }
 }
 
@@ -35,6 +35,6 @@ class AppProviderObserver extends ProviderObserver {
 class AppNavigationObserver extends NavigatorObserver {
   @override
   void didPush(Route route, Route? previousRoute) {
-    Log.d("Pushed Route ${route.settings.name}");
+    Log.d('Pushed Route ${route.settings.name}');
   }
 }

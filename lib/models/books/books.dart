@@ -1,16 +1,17 @@
 import 'package:equatable/equatable.dart';
-import "package:json_annotation/json_annotation.dart";
+import 'package:json_annotation/json_annotation.dart';
 
-part "books.g.dart";
+part 'books.g.dart';
 
 @JsonSerializable()
 class BooksModel extends Equatable {
-  @JsonKey(name: "_id")
+  final String id;
   final String title;
   final List<String> author;
   final String coverImage;
 
   const BooksModel({
+    required this.id,
     required this.title,
     required this.author,
     required this.coverImage,
@@ -22,10 +23,8 @@ class BooksModel extends Equatable {
   Map<String, Object?> toJson() => _$BooksModelToJson(this);
 
   @override
-  String toString() {
-    return (title);
-  }
+  String toString() => title;
 
   @override
-  List<Object?> get props => ["_id"];
+  List<Object?> get props => [id];
 }

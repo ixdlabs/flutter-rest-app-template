@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 abstract class ColorConstants {
-  static const Color kBlue = Colors.blueAccent;
-  static const Color kWhite = Colors.white;
-  static const Color kBlack = Colors.black;
+  static const Color kPrimary = Colors.blueAccent;
 }
 
 abstract class AssetConstants {
-  static const String kBookReading = "assets/images/book_reading.png";
+  static const String kBookReading = 'assets/images/book_reading.png';
 }

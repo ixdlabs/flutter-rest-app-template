@@ -1,18 +1,18 @@
+import 'package:example_app/views/books/components/books_list_view.dart';
+import 'package:example_app/views/books/components/page_title_view.dart';
+import 'package:example_app/views/books/components/search_bar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/views/books/components/books_list_view.dart';
-import 'package:flutter_rest_app_template/views/books/components/page_title_view.dart';
-import 'package:flutter_rest_app_template/views/books/components/search_bar_view.dart';
 
 class BooksPage extends StatelessWidget {
-  const BooksPage({Key? key}) : super(key: key);
+  const BooksPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             PageTitleView(),
             SearchBarView(),
             BookListView(),

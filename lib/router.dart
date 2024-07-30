@@ -1,8 +1,8 @@
+import 'package:example_app/utils/logger/observers.dart';
+import 'package:example_app/views/books/books_page.dart';
+import 'package:example_app/views/home/home_page.dart';
+import 'package:example_app/views/splash/splash_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/utils/logger/observers.dart';
-import 'package:flutter_rest_app_template/views/books/books_page.dart';
-import 'package:flutter_rest_app_template/views/home/home_page.dart';
-import 'package:flutter_rest_app_template/views/splash/splash_page.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {

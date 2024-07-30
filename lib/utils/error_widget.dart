@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_app_template/constants.dart';
 
 /// Shows generic error widget, with possibility to add retry button below it.
 class ErrorMessageWidget extends StatelessWidget {
@@ -28,7 +27,7 @@ class ErrorMessageWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              backgroundColor: theme.errorColor,
+              backgroundColor: theme.colorScheme.error,
               child: Icon(
                 Icons.error_outline,
                 color: theme.scaffoldBackgroundColor,
@@ -38,19 +37,15 @@ class ErrorMessageWidget extends StatelessWidget {
             Text(
               message ?? exception?.toString() ?? 'Unknown error',
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                  color: isLightColor
-                      ? ColorConstants.kWhite
-                      : ColorConstants.kBlack),
+              style: theme.textTheme.bodyMedium
+                  ?.copyWith(color: isLightColor ? Colors.white : Colors.black),
             ),
             const SizedBox(height: 16),
             if (onRetry != null)
               IconButton(
                 icon: const Icon(Icons.refresh),
                 onPressed: onRetry,
-                color: isLightColor
-                    ? ColorConstants.kWhite
-                    : ColorConstants.kBlack,
+                color: isLightColor ? Colors.white : Colors.black,
               ),
           ],
         ),
