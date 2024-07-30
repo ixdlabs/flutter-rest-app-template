@@ -20,6 +20,8 @@ fvm flutter run
 
 If you use VS Code, the configuration file `.vscode/settings.json` is already set up to use the Flutter version specified in the `.fvm` file.
 
+> When updating the Flutter version, you should update the `.fvm` file and run the `fvm install` command. Also make sure to update the flutter version in the `pubspec.yaml` file.
+
 ## Building models
 
 ```bash
